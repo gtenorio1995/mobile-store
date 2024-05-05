@@ -8,6 +8,9 @@
         - Branco: #FFFFFF;
         - Black: #030303;
         - Seasalt: ##FAFBFA;
+        - Silver: #C4C4C4;
+        - Dim gray: #777070;
+        - Jet: #3A3A3A;
     **Fontes:**
         - Poppins
             - Com variações de peso, partindo do regular ao bold.

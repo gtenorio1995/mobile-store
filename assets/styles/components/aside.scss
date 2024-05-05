@@ -1,0 +1,65 @@
+// Imports config --------------------------------------------------------------
+@use '../config/colors';
+@use 'sass:math';
+
+// Functions -------------------------------------------------------------------
+@function converter($valor){
+    @return math.div($valor, 16) * 1rem;
+}
+
+// Mixins ----------------------------------------------------------------------
+@mixin flex ($justify, $items){
+    display: flex;
+    justify-content: $justify;
+    align-items: $items;
+}
+
+// Aside -----------------------------------------------------------------------
+aside{
+    background-color: colors.$black;
+
+    width: 100%;
+    max-width: 100px;
+    height: 100vh;
+    position: fixed;
+
+    @include flex(space-between, center);
+    flex-direction: column;
+    padding: converter(32);
+
+    nav{
+        ul{
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+
+            @include flex(space-between, center);
+            gap: converter(50);
+
+            li{
+                padding-block: converter(8);
+
+                a{
+                    color: colors.$white;
+                    opacity: 0.5;
+
+                    &:hover{
+                        opacity: 0.75;
+                    }
+                }
+
+                &.active{
+                    border-left: 1px solid colors.$white;
+                    border-style: dashed;
+
+                    a{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    button{
+        padding: converter(20);
+    }
+}

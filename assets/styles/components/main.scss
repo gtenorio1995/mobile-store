@@ -1,0 +1,113 @@
+// Imports config --------------------------------------------------------------
+@use '../config/colors';
+@use 'sass:math';
+
+// Functions -------------------------------------------------------------------
+@function converter($valor){
+    @return math.div($valor, 16) * 1rem;
+}
+
+// Mixins ----------------------------------------------------------------------
+@mixin flex ($justify, $items){
+    display: flex;
+    justify-content: $justify;
+    align-items: $items;
+}
+
+// Main ------------------------------------------------------------------------
+main{
+    width: 100%;
+    margin-left: 100px;
+
+    .container{
+        padding: converter(12) converter(16) 0;
+
+        .search{
+            width: 100%;
+            @include flex(end, center);
+            button{
+                padding: converter(20);
+            }
+        }
+
+        .content{
+            @include flex(center, center);
+            flex-direction: column;
+
+            .title-section{
+                width: 100%;
+
+                h3{
+                    color: colors.$dim-gray;
+                    font-size: converter(14);
+                    font-weight: 400;
+                    text-align: start;
+                }
+
+                h2{
+                    font-size: converter(22);
+                    font-weight: 600;
+                    text-align: start;
+                    color: colors.$black;
+                    margin-bottom: converter(40);
+                }
+            }
+
+            .cards{
+                width: 100%;
+                max-width: 200px;
+                @include flex(center,center);
+                flex-direction: column;
+                gap: converter(32);
+                
+                .card{
+                    @include flex(center,center);
+                    flex-direction: column;
+                    
+                    .hero{
+                        margin-top: converter(16);
+
+                        .category-product{
+                            font-size: converter(16);
+                            font-weight: 600;
+                            margin-bottom: converter(4);
+                        }
+
+                        p{
+                            font-size: converter(10);
+                            color: colors.$dim-gray;
+                            margin-bottom: converter(8);
+                        }
+
+                        .price{
+                            @include flex(start, center);
+                            gap: converter(12);
+                            color: colors.$black;
+
+                            strong{
+                                font-weight: 600;
+                                font-size: converter(16);
+                            }
+
+                            button{
+                                width: converter(15);
+                                height: converter(15);
+                                border-radius: converter(15);
+                                background-color: colors.$white;
+                                box-shadow: 0 converter(2) converter(8) rgba($color: colors.$jet, $alpha: 0.3);
+
+                                @include flex(center, center);
+                            }
+                        }
+                    }
+                }
+
+                hr{
+                    width: 100%;
+                    color: colors.$jet;
+                    opacity: 0.1;
+                }
+            }
+        }
+    }
+}

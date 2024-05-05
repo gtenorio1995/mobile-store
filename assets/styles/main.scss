@@ -1,0 +1,8 @@
+// Imports config --------------------------------------------------------------
+@use './config/reset';
+@use './config/colors';
+
+// Imports components ----------------------------------------------------------
+@use './components/app';
+@use './components/aside';
+@use './components/main';

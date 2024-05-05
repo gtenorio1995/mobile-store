@@ -1,0 +1,45 @@
+// Imports config --------------------------------------------------------------
+@use './colors';
+@use 'sass:math';
+
+// Functions -------------------------------------------------------------------
+@function converter($valor){
+    @return math.div($valor, 16) * 1rem;
+}
+
+
+// Reset -----------------------------------------------------------------------
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html,
+body{
+    scroll-behavior: smooth;
+    transition: all 0.6s ease-in-out;
+    background-color: colors.$seasalt;
+    overflow-x: hidden;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+button{
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
