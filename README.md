@@ -1,9 +1,9 @@
 # MOBILE STORE
 
-## APP:
+## APP :rocket:
     Criação de um aplicativo de compras de produtos pioneiros da tecnologia. A loja Mobile Store (nome ficticio), é focada em três categorias de produto, sendo relogios, smartphones e notebooks. O aplicativo é uma obra do designer Shashi K. da comunidade do figma. Estou codando e subindo na nuvem como forma de trinamento dos conhecimentos obtido no curso de Engenheiro Front-end da plataforma de cursos livres EBAC.
 
-### MoodBoard:
+### MoodBoard :art:
     **Cores:**
         - Branco: #FFFFFF;
         - Black: #030303;
@@ -15,7 +15,7 @@
         - Poppins
             - Com variações de peso, partindo do regular ao bold.
 
-### Resources:
+### Resources :building_construction:
     - O app conta com barra lateral (aside) e container de vendas na tela Home:
         - Aside:
             - icone da brand ou logo;
@@ -45,7 +45,7 @@
             - e texto e bordas em black;
             - tem a funcionalidade de colocar o produto no carrinho de compras, mas continuar na vitrine da loja, escolhendo outros produtos;
 
-### Ferramentas:
+### Ferramentas :wrench:
     No projeto foi utilizado as seguintes ferramentas:
         - HTML 5;
         - CSS 3;
