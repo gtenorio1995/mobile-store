@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./assets/img/logo.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/img/favicon.svg" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -25,19 +25,19 @@
             </div>
             <nav>
                 <ul>
-                    <li class="active">
-                        <a href="">Notebooks</a>
+                    <li class="nav-links">
+                        <a href="#macbooks">Macbooks</a>
                     </li>
-                    <li>
-                        <a href="">Smartphones</a>
+                    <li class="nav-links">
+                        <a href="#smartphones">Iphones</a>
                     </li>
-                    <li>
-                        <a href="">Watches</a>
+                    <li class="nav-links">
+                        <a href="#watches">Watches</a>
                     </li>
                 </ul>
             </nav>
-            <button type="button">
-                <a href="#">
+            <button type="button" id="btn-home">
+                <a href="#watches">
                     <img src="./assets/img/clarity_home-line.svg" alt="botão home">
                 </a>
             </button>
@@ -49,75 +49,204 @@
             <!-- START CONTAINER -->
             <div class="container">
                 <div class="search">
-                    <button type="button">
+                    <button type="button" id="btn-search">
                         <img src="./assets/img/search.svg" alt="search">
                     </button>
+                    <form>
+                        <input type="search" name="search" id="search-input">
+                    </form>
                 </div>
                 <!-- START CONTENT -->
                 <div class="content">
-                    <div class="title-section">
-                        <h3>Apple</h3>
-                        <h2>Watches</h2>
-                    </div>
-                    <!-- START CARDS -->
-                    <div class="cards">
-                        <!-- CARD 01 -->
-                        <div class="card">
-                            <img src="./assets/img/watch-01.svg" alt="watch-01">
-                            <div class="hero">
-                                <div class="category-product">
-                                    Series 3
-                                </div>
-                                <p>
-                                    O Apple Watch série 3 foi projetado para pessoas que desejam manter seu jogo de
-                                    fitness
-                                    em dia.
-                                </p>
-                                <div class="price">
-                                    <strong>
-                                        R$ 1.499,99
-                                    </strong>
-                                    <button type="button">
-                                        +
-                                    </button>
+                    <!-- SECTION WATCHES -->
+                    <section id="watches" class="selected">
+                        <div class="title-section">
+                            <h3>Apple</h3>
+                            <h2>Watches</h2>
+                        </div>
+                        <!-- START CARDS -->
+                        <div class="cards">
+                            <!-- CARD 01 -->
+                            <div class="card">
+                                <img src="./assets/img/watch-01.svg" alt="watch-01">
+                                <div class="hero">
+                                    <div class="category-product">
+                                        Series 3
+                                    </div>
+                                    <p>
+                                        O Apple Watch série 3 foi projetado para pessoas que desejam manter seu jogo de
+                                        fitness em dia.
+                                    </p>
+                                    <div class="price">
+                                        <strong>
+                                            R$ 1.499,99
+                                        </strong>
+                                        <button type="button">
+                                            +
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- CARD 01 -->
+                            <!-- CARD 01 -->
 
-                        <hr>
+                            <hr>
 
-                        <!-- CARD 02 -->
-                        <div class="card">
-                            <img src="./assets/img/watch-02.svg" alt="watch-02">
-                            <div class="hero">
-                                <div class="category-product">
-                                    Series 5
-                                </div>
-                                <p>
-                                    O Apple Watch série 3 foi projetado para pessoas que desejam manter seu jogo de
-                                    fitness
-                                    em dia.
-                                </p>
-                                <div class="price">
-                                    <strong>
-                                        R$ 2.299,99
-                                    </strong>
-                                    <button type="button">
-                                        +
-                                    </button>
+                            <!-- CARD 02 -->
+                            <div class="card">
+                                <img src="./assets/img/watch-02.svg" alt="watch-02">
+                                <div class="hero">
+                                    <div class="category-product">
+                                        Series 5
+                                    </div>
+                                    <p>
+                                        O Apple Watch série 3 foi projetado para pessoas que desejam manter seu jogo de
+                                        fitness
+                                        em dia.
+                                    </p>
+                                    <div class="price">
+                                        <strong>
+                                            R$ 2.299,99
+                                        </strong>
+                                        <button type="button">
+                                            +
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
+                            <!-- CARD 02 -->
                         </div>
-                        <!-- CARD 02 -->
-                    </div>
+                    </section>
+                    <!-- SECTION WATCHES -->
+
+                    <!-- SECTION IPHONES -->
+                    <section id="smartphones">
+                        <div class="title-section">
+                            <h3>Apple</h3>
+                            <h2>Iphones</h2>
+                        </div>
+                        <!-- START CARDS -->
+                        <div class="cards">
+                            <!-- CARD 01 -->
+                            <div class="card">
+                                <img src="./assets/img/iphone-1.svg" alt="iphone-01">
+                                <div class="hero">
+                                    <div class="category-product">
+                                        Iphone 15
+                                    </div>
+                                    <p>
+                                        O Apple Iphone 15 foi projetado para pessoas que desejam ter o de mais moderno e
+                                        tecnologico na palma da mão.
+                                    </p>
+                                    <div class="price">
+                                        <strong>
+                                            R$ 6.999,99
+                                        </strong>
+                                        <button type="button">
+                                            +
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- CARD 01 -->
+
+                            <hr>
+
+                            <!-- CARD 02 -->
+                            <div class="card">
+                                <img src="./assets/img/iphone-2.svg" alt="iphone-02">
+                                <div class="hero">
+                                    <div class="category-product">
+                                        Iphone 13
+                                    </div>
+                                    <p>
+                                        O Apple Iphone 13 foi projetado para pessoas que desejam ter o de mais moderno e
+                                        tecnologico na palma da mão.
+                                    </p>
+                                    <div class="price">
+                                        <strong>
+                                            R$ 3.999,99
+                                        </strong>
+                                        <button type="button">
+                                            +
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- CARD 02 -->
+                        </div>
+                    </section>
+                    <!-- SECTION IPHONES -->
+
+                    <!-- SECTION MACBOOKS -->
+                    <section id="macbooks">
+                        <div class="title-section">
+                            <h3>Apple</h3>
+                            <h2>Macbooks</h2>
+                        </div>
+                        <!-- START CARDS -->
+                        <div class="cards">
+                            <!-- CARD 01 -->
+                            <div class="card">
+                                <img src="./assets/img/macbook.svg" alt="mac-01">
+                                <div class="hero">
+                                    <div class="category-product">
+                                        Series PRO
+                                    </div>
+                                    <p>
+                                        O Apple Macbook Pro foi projetado para pessoas que desejam desempenho e
+                                        sofisticação
+                                        em um único lugar.
+                                    </p>
+                                    <div class="price">
+                                        <strong>
+                                            R$ 7.899,99
+                                        </strong>
+                                        <button type="button">
+                                            +
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- CARD 01 -->
+
+                            <hr>
+
+                            <!-- CARD 02 -->
+                            <div class="card">
+                                <img src="./assets/img/macbook.svg" alt="macbook-02">
+                                <div class="hero">
+                                    <div class="category-product">
+                                        Series Lite
+                                    </div>
+                                    <p>
+                                        O Apple Macbook Pro foi projetado para pessoas que desejam desempenho e
+                                        sofisticação
+                                        em um único lugar.
+                                    </p>
+                                    <div class="price">
+                                        <strong>
+                                            R$ 5.299,99
+                                        </strong>
+                                        <button type="button">
+                                            +
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- CARD 02 -->
+                        </div>
+                    </section>
+                    <!-- SECTION MACBOOKS -->
+
+                    <!-- END CONTENT -->
                 </div>
-                <!-- END CONTENT -->
             </div>
             <!-- END CONTAINER -->
         </main>
         <!-- END MAIN -->
     </div>
+
+    <script src="./assets/script.js"></script>
 </body>
 
 </html>

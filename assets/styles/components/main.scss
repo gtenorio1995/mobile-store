@@ -3,111 +3,158 @@
 @use 'sass:math';
 
 // Functions -------------------------------------------------------------------
-@function converter($valor){
+@function converter($valor) {
     @return math.div($valor, 16) * 1rem;
 }
 
 // Mixins ----------------------------------------------------------------------
-@mixin flex ($justify, $items){
+@mixin flex ($justify, $items) {
     display: flex;
     justify-content: $justify;
     align-items: $items;
 }
 
 // Main ------------------------------------------------------------------------
-main{
+main {
     width: 100%;
     margin-left: 100px;
 
-    .container{
+    .container {
         padding: converter(12) converter(16) 0;
+        position: relative;
 
-        .search{
+        .search {
+            position: absolute;
+            padding: 0 converter(16);
+            right: 0;
             width: 100%;
-            @include flex(end, center);
-            button{
+            @include flex(center, end);
+            flex-direction: column;
+
+            button {
                 padding: converter(20);
+                z-index: 10;
+            }
+
+            form{
+                transform: translateX(100vw);
+                width: 100%;
+                @include flex(end, center);
+
+                input{
+                    width: 100%;
+                    border-radius: converter(4);
+                    border: none;
+                    padding: converter(4) converter(12);
+                    background-color: rgba($color: colors.$silver, $alpha: 0.25);
+                }
+                
+                &.on-search{
+                    z-index: 10;
+                    transform: translateX(0);
+                }
             }
         }
 
-        .content{
+        .content {
+            width: 100%;
             @include flex(center, center);
             flex-direction: column;
 
-            .title-section{
+            section {
+                position: absolute;
+                transform: translateX(-150vw);
+                top: 0; 
                 width: 100%;
+                padding: converter(24) converter(16) converter(16);
 
-                h3{
-                    color: colors.$dim-gray;
-                    font-size: converter(14);
-                    font-weight: 400;
-                    text-align: start;
-                }
-
-                h2{
-                    font-size: converter(22);
-                    font-weight: 600;
-                    text-align: start;
-                    color: colors.$black;
-                    margin-bottom: converter(40);
-                }
-            }
-
-            .cards{
-                width: 100%;
-                max-width: 200px;
-                @include flex(center,center);
-                flex-direction: column;
-                gap: converter(32);
-                
-                .card{
-                    @include flex(center,center);
+                .title-section {
+                    @include flex(center, start);
                     flex-direction: column;
-                    
-                    .hero{
-                        margin-top: converter(16);
+                    position: sticky;
 
-                        .category-product{
-                            font-size: converter(16);
-                            font-weight: 600;
-                            margin-bottom: converter(4);
-                        }
+                    h3{
+                        text-align: start;
+                        color: colors.$dim-gray;
+                        font-size: converter(14);
+                        font-weight: 400;
+                    }
 
-                        p{
-                            font-size: converter(10);
-                            color: colors.$dim-gray;
-                            margin-bottom: converter(8);
-                        }
-
-                        .price{
-                            @include flex(start, center);
-                            gap: converter(12);
-                            color: colors.$black;
-
-                            strong{
-                                font-weight: 600;
-                                font-size: converter(16);
-                            }
-
-                            button{
-                                width: converter(15);
-                                height: converter(15);
-                                border-radius: converter(15);
-                                background-color: colors.$white;
-                                box-shadow: 0 converter(2) converter(8) rgba($color: colors.$jet, $alpha: 0.3);
-
-                                @include flex(center, center);
-                            }
-                        }
+                    h2{
+                        font-size: converter(22);
+                        font-weight: 600;
+                        color: colors.$black;
+                        margin-bottom: converter(42);
                     }
                 }
 
-                hr{
-                    width: 100%;
-                    color: colors.$jet;
-                    opacity: 0.1;
+                .cards{
+                    @include flex(center, center);
+                    flex-direction: column;
+                    row-gap: converter(32);
+
+                    .card{
+                        @include flex(center, center);
+                        flex-direction: column;
+
+                        img{
+                            max-width: 200px;
+                            max-height: 200px;
+                        }
+                        
+                        .hero{
+                            @include flex(center, start);
+                            flex-direction: column;
+                            width: 100%;
+
+                            .category-product{
+                                font-size: converter(16);
+                                font-weight: 600;
+                                color: colors.$black;
+                                margin-top: converter(12);
+                                margin-bottom: converter(8);
+                            }
+
+                            p{
+                                font-size: converter(10);
+                                color: colors.$dim-gray;
+                                font-weight: 400;
+                            }
+
+                            .price{
+                                @include flex(start, center);
+                                column-gap: converter(16);
+                                margin-top: converter(8);
+
+                                strong{
+                                    font-size: converter(16);
+                                    font-weight: 600;
+                                    color: colors.$black;
+                                }
+
+                                button{
+                                    width: converter(15);
+                                    height: converter(15);
+                                    background-color: colors.$white;
+                                    border: none;
+                                    border-radius: converter(15);
+                                    box-shadow: 0 converter(2) converter(2) rgba($color: colors.$black, $alpha: 0.5);
+                                }
+                            }
+                        }
+                    }
+
+                    hr{
+                        width: 100%;
+                        border-color: rgba($color: colors.$black, $alpha: 0.1)
+                    }
+                }
+
+                &.selected{
+                    transform: translateX(0);
                 }
             }
         }
+
     }
 }

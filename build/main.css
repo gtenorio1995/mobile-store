@@ -4,19 +4,21 @@
   box-sizing: border-box;
   outline: none;
   font-family: "Poppins", sans-serif;
+  transition: all 0.6s ease-in-out;
 }
 
 html,
 body {
+  overflow-x: hidden;
   scroll-behavior: smooth;
   transition: all 0.6s ease-in-out;
   background-color: #fafbfa;
-  overflow-x: hidden;
 }
 
 body {
   width: 100vw;
   height: 100vh;
+  min-width: 320px;
 }
 
 a {
@@ -45,6 +47,7 @@ button {
 
 aside {
   background-color: #030303;
+  z-index: 10;
   width: 100%;
   max-width: 100px;
   height: 100vh;
@@ -90,91 +93,135 @@ main {
 }
 main .container {
   padding: 0.75rem 1rem 0;
+  position: relative;
 }
 main .container .search {
+  position: absolute;
+  padding: 0 1rem;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  flex-direction: column;
+}
+main .container .search button {
+  padding: 1.25rem;
+  z-index: 10;
+}
+main .container .search form {
+  transform: translateX(100vw);
   width: 100%;
   display: flex;
   justify-content: end;
   align-items: center;
 }
-main .container .search button {
-  padding: 1.25rem;
+main .container .search form input {
+  width: 100%;
+  border-radius: 0.25rem;
+  border: none;
+  padding: 0.25rem 0.75rem;
+  background-color: rgba(196, 196, 196, 0.25);
+}
+main .container .search form.on-search {
+  z-index: 10;
+  transform: translateX(0);
 }
 main .container .content {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-main .container .content .title-section {
+main .container .content section {
+  position: absolute;
+  transform: translateX(-150vw);
+  top: 0;
   width: 100%;
+  padding: 1.5rem 1rem 1rem;
 }
-main .container .content .title-section h3 {
+main .container .content section .title-section {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  position: sticky;
+}
+main .container .content section .title-section h3 {
+  text-align: start;
   color: #777070;
   font-size: 0.875rem;
   font-weight: 400;
-  text-align: start;
 }
-main .container .content .title-section h2 {
+main .container .content section .title-section h2 {
   font-size: 1.375rem;
   font-weight: 600;
-  text-align: start;
   color: #030303;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.625rem;
 }
-main .container .content .cards {
-  width: 100%;
+main .container .content section .cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+main .container .content section .cards .card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main .container .content section .cards .card img {
   max-width: 200px;
+  max-height: 200px;
+}
+main .container .content section .cards .card .hero {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   flex-direction: column;
-  gap: 2rem;
+  width: 100%;
 }
-main .container .content .cards .card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-main .container .content .cards .card .hero {
-  margin-top: 1rem;
-}
-main .container .content .cards .card .hero .category-product {
+main .container .content section .cards .card .hero .category-product {
   font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 0.25rem;
-}
-main .container .content .cards .card .hero p {
-  font-size: 0.625rem;
-  color: #777070;
+  color: #030303;
+  margin-top: 0.75rem;
   margin-bottom: 0.5rem;
 }
-main .container .content .cards .card .hero .price {
+main .container .content section .cards .card .hero p {
+  font-size: 0.625rem;
+  color: #777070;
+  font-weight: 400;
+}
+main .container .content section .cards .card .hero .price {
   display: flex;
   justify-content: start;
   align-items: center;
-  gap: 0.75rem;
+  column-gap: 1rem;
+  margin-top: 0.5rem;
+}
+main .container .content section .cards .card .hero .price strong {
+  font-size: 1rem;
+  font-weight: 600;
   color: #030303;
 }
-main .container .content .cards .card .hero .price strong {
-  font-weight: 600;
-  font-size: 1rem;
-}
-main .container .content .cards .card .hero .price button {
+main .container .content section .cards .card .hero .price button {
   width: 0.9375rem;
   height: 0.9375rem;
-  border-radius: 0.9375rem;
   background-color: #fff;
-  box-shadow: 0 0.125rem 0.5rem rgba(58, 58, 58, 0.3);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border: none;
+  border-radius: 0.9375rem;
+  box-shadow: 0 0.125rem 0.125rem rgba(3, 3, 3, 0.5);
 }
-main .container .content .cards hr {
+main .container .content section .cards hr {
   width: 100%;
-  color: #3a3a3a;
-  opacity: 0.1;
+  border-color: rgba(3, 3, 3, 0.1);
+}
+main .container .content section.selected {
+  transform: translateX(0);
 }
 
 /*# sourceMappingURL=main.css.map */
